@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\DOT_NET_MVC_INVENTORY.props" />
+</Project>

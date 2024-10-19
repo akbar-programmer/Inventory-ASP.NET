@@ -1,0 +1,58 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Ali akbar\\source\\repos\\DOT_NET_MVC_INVENTORY\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C490860-2079-4B4C-BF37-4D8F172F91E7}|DOT_NET_MVC_INVENTORY.csproj|c:\\users\\ali akbar\\source\\repos\\dot_net_mvc_inventory\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6C490860-2079-4B4C-BF37-4D8F172F91E7}|DOT_NET_MVC_INVENTORY.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6C490860-2079-4B4C-BF37-4D8F172F91E7}|DOT_NET_MVC_INVENTORY.csproj|c:\\users\\ali akbar\\source\\repos\\dot_net_mvc_inventory\\views\\item\\additem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6C490860-2079-4B4C-BF37-4D8F172F91E7}|DOT_NET_MVC_INVENTORY.csproj|solutionrelative:views\\item\\additem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ali akbar\\source\\repos\\DOT_NET_MVC_INVENTORY\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Ali akbar\\source\\repos\\DOT_NET_MVC_INVENTORY\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAADEAAACWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T19:33:36.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddItem.cshtml",
+              "DocumentMoniker": "C:\\Users\\Ali akbar\\source\\repos\\DOT_NET_MVC_INVENTORY\\Views\\Item\\AddItem.cshtml",
+              "RelativeDocumentMoniker": "Views\\Item\\AddItem.cshtml",
+              "ToolTip": "C:\\Users\\Ali akbar\\source\\repos\\DOT_NET_MVC_INVENTORY\\Views\\Item\\AddItem.cshtml",
+              "RelativeToolTip": "Views\\Item\\AddItem.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-19T19:32:22.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

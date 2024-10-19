@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DOT_NET_MVC_INVENTORY.Models.Category>
+
+@{
+    ViewData["Title"] = "Category";
+}
+<h1>Category</h1>
+
+<p>
+    <a asp-action="AddCategory">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th> Name</th>
+            <th>IsActive</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td> @item.Name</td>
+                <td>@item.IsActive</td>
+            </tr>
+        }
+    </tbody>
+</table>
