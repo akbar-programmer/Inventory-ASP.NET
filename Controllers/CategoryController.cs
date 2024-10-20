@@ -25,6 +25,7 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
                 while (reader.Read())
                 {
                     Category cat = new Category();
+                    cat.Id = Convert.ToInt32( reader["Id"].ToString());
                     cat.Name = reader["Name"].ToString();
                     category.Add(cat);
                 }
@@ -62,6 +63,48 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult UpdateCategory(int id)
+        {
+            Category category = new Category();
+            using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
+            {
+                string query = "select * from Category where Id=@Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    category.Name = reader["Name"].ToString();
+                 
+                }
+                conn.Close();
+            }
+            return View(category);
+        }
+        [HttpPost]
+        public ActionResult UpdateCategory(Category category)
+        {
+            using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
+            {
+                string query = "update Category set Name=@Name,IsActive=@IsActive where Id=@Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Name", category.Name);
+                cmd.Parameters.AddWithValue("@IsActive", category.IsActive);
+                cmd.Parameters.AddWithValue("@Id", category.Id);
+
+                conn.Open();
+                int response = cmd.ExecuteNonQuery();
+                conn.Close();
+            }
+
+
+            return Redirect("/Category");
         }
     }
 }

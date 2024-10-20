@@ -12,11 +12,12 @@
 <table class="table">
     <thead>
         <tr>
-            <th> ItemCode</th>
-            <th> Name</th>
+            <th>ItemCode</th>
+            <th>Name</th>
             <th>Description</th>
             <th>Brand</th>
             <th>Category</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -27,7 +28,11 @@
             <td>@item.Name</td>
             <td>@item.Description</td>          
             <td> @item.BrandId</td>
-            <td>@item.CategoryId</td>          
+            <td>@item.CategoryId</td>     
+                <td>
+                    @Html.ActionLink("Edit", "UpdateItem", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
         </tr>
 }
     </tbody>

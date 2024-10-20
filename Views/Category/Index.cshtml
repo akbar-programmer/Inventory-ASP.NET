@@ -13,6 +13,7 @@
         <tr>
             <th> Name</th>
             <th>IsActive</th>
+            <th>IsActive</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,10 @@
             <tr>
                 <td> @item.Name</td>
                 <td>@item.IsActive</td>
+                <td>
+                    @Html.ActionLink("Edit", "UpdateCategory", new {  id=item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
             </tr>
         }
     </tbody>

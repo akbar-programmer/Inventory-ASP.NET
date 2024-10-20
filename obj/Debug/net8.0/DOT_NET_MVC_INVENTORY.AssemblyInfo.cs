@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DOT_NET_MVC_INVENTORY")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+845ecf5092e78e97b98bb362eac44c944a7192a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("DOT_NET_MVC_INVENTORY")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DOT_NET_MVC_INVENTORY")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
