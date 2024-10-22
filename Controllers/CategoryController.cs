@@ -27,6 +27,7 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
                     Category cat = new Category();
                     cat.Id = Convert.ToInt32( reader["Id"].ToString());
                     cat.Name = reader["Name"].ToString();
+                    cat.IsActive = Convert.ToBoolean(reader["IsActive"].ToString());
                     category.Add(cat);
                 }
                 conn.Close();
@@ -47,14 +48,6 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
                 string query = "insert into Category (Name,IsActive) values (@Name,@IsActive)";
                 SqlCommand cmd = new SqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Name", category.Name);
-                if (category.IsActive)
-                {
-                    category.IsActive = true;
-                }
-                else
-                {
-                    category.IsActive = false;
-                }
                 cmd.Parameters.AddWithValue("@IsActive", category.IsActive);
 
                 conn.Open();
@@ -104,6 +97,21 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
             }
 
 
+            return Redirect("/Category");
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
+            {
+                string query = "delete from Category where Id=@Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+                int response = cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
             return Redirect("/Category");
         }
     }

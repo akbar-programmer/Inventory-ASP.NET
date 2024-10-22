@@ -9,11 +9,12 @@
 <p>
     <a asp-action="AddBrand">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th> Name</th>
-            <th>IsActive</th>
+            <th class="text-center">IsActive</th>
+            <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -21,7 +22,13 @@
         {
             <tr>
                 <td> @item.Name</td>
-                <td>@item.IsActive</td>
+                <td class="text-center"> @Html.DisplayFor(modelItem => item.IsActive)</td>
+                <td class="text-center">
+                    <div class="btn-group">
+                    @Html.ActionLink("Edit", "UpdateBrand", new { id = item.Id }, new {  @class = "btn btn-sm btn-info badge" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure to delete this?');", @class = "btn btn-sm btn-danger badge" })
+                    </div>
+                </td>
             </tr>
         }
     </tbody>

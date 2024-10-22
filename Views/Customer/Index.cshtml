@@ -9,47 +9,47 @@
 <p>
     <a asp-action="AddCustomer">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Mobile)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.IsActive)
             </th>
-            <th></th>
+            <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-           
+    @foreach (var item in Model) {
+        <tr>           
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
+                <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Mobile)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
-                    @Html.DisplayFor(modelItem => item.IsActive )
+                <td class="text-center">
+                @Html.DisplayFor(modelItem => item.IsActive )
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                <td class="text-center">
+                <div class="btn-group">
+                    @Html.ActionLink("Edit", "UpdateCustomer", new { id = item.Id }, new { @class = "btn btn-sm btn-info badge" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure to delete this?');", @class = "btn btn-sm btn-danger badge" })
+                </div>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

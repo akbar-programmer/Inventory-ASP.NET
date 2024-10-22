@@ -45,7 +45,7 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
                 conn.Open();
 
                 SqlDataReader reader = cmd.ExecuteReader();
-
+               
                 while (reader.Read())
                 {
                     Item item = new Item();
@@ -55,7 +55,7 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
                     item.Description = reader["Description"].ToString();
                     item.BrandId = reader["BrandName"].ToString();
                     item.CategoryId =reader["CategoryName"].ToString();
-                    //item.IsActive = Convert.ToBoolean(reader["IsActive"].ToString());
+                    item.IsActive = Convert.ToBoolean(reader["IsActive"].ToString());
                     items.Add(item);
                 }
                 conn.Close();
@@ -228,6 +228,21 @@ namespace DOT_NET_MVC_INVENTORY.Controllers
             }
 
 
+            return Redirect("/Item");
+        }
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            using (SqlConnection conn = new SqlConnection(dbContext.ConnectionString))
+            {
+                string query = "delete from Item where Id=@Id";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Id", id);
+                conn.Open();
+                int response = cmd.ExecuteNonQuery();
+
+                conn.Close();
+            }
             return Redirect("/Item");
         }
     }

@@ -9,31 +9,44 @@
 <p>
     <a asp-action="AddItem">Create New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
-            <th>ItemCode</th>
+            <th class="text-center"> SL</th>
+            <th class="text-center"> @Html.DisplayNameFor(model => model.ItemCode)</th>
             <th>Name</th>
             <th>Description</th>
             <th>Brand</th>
             <th>Category</th>
-            <th>Action</th>
+            <th class="text-center">IsActive</th>
+            <th class="text-center">Action</th>
         </tr>
     </thead>
     <tbody>
-      
+        @{
+            int i = 1;
+        }
 @foreach (var item in Model) {
         <tr>
-            <td> @item.ItemCode</td>
+            <td class="text-center">
+                @i   @{
+                    i++;
+                }
+            </td>
+            <td class="text-center"> @item.ItemCode</td>
             <td>@item.Name</td>
             <td>@item.Description</td>          
             <td> @item.BrandId</td>
             <td>@item.CategoryId</td>     
-                <td>
-                    @Html.ActionLink("Edit", "UpdateItem", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-                </td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.IsActive)</td>
+            <td class="text-center">
+                <div class="btn-group">
+                    @Html.ActionLink("Edit", "UpdateItem", new { id = item.Id }, new { @class = "btn btn-sm btn-info badge" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure to delete this?');", @class = "btn btn-sm btn-danger badge" })
+                </div>
+            </td>
         </tr>
+      
 }
     </tbody>
 </table>
