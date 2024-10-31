@@ -1,0 +1,55 @@
+﻿@model IEnumerable<DOT_NET_MVC_INVENTORY.Models.Supplier>
+
+@{
+    ViewData["Title"] = "Supplier";
+}
+
+<h1>Supplier</h1>
+
+<p>
+    <a asp-action="AddSupplier">Create New</a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.IsActive)
+            </th>
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model) {
+        <tr>           
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td class="text-center">
+                @Html.DisplayFor(modelItem => item.Mobile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+                <td class="text-center">
+                @Html.DisplayFor(modelItem => item.IsActive )
+            </td>
+                <td class="text-center">
+                <div class="btn-group">
+                        @Html.ActionLink("Edit", "UpdateSupplier", new { id = item.Id }, new { @class = "btn btn-sm btn-info badge" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { onclick = "return confirm('Are you sure to delete this?');", @class = "btn btn-sm btn-danger badge" })
+                </div>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
